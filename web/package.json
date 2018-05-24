@@ -1,0 +1,7 @@
+{
+  "name": "localstore-website",
+  "version": "1.0.0",
+  "description": "Web application that provides the front end to localstore.",
+  "repository": "https://github.com/praveensastry/localstore",
+  "license": "MIT"
+}

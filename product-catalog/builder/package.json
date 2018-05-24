@@ -1,0 +1,18 @@
+{
+  "name": "localstore-product-catalog-builder",
+  "version": "0.0.1",
+  "description": "A stream processor that accumulates a catalog of our latest best knowledge regarding each product",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: tests executed by root localstore package.json\" && exit 1"
+  },
+  "author": "praveensastry",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/praveensastry/localstore/issues"
+  },
+  "homepage": "https://github.com/praveensastry/localstore/product-catalog#readme",
+  "dependencies": {
+    "kinesis-handler": "git+https://github.com/praveensastry/kinesis-handler.git"
+  }
+}

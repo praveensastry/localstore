@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "self": {
+    "vendor": "pastrylabs",
+    "name": "category/items",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "category":   { "type": "string" }
+    },
+    "required": [
+      "category"
+    ],
+    "additionalProperties": false
+  },
+  "additionalProperties": false
+}

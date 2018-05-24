@@ -1,0 +1,10 @@
+{
+  "schema": "pastrylabs/retail-stream-ingress/1-0-0",
+  "origin": "scripts/put-retail-stream-event/Lauren.Wang@praveensastry.com/lauren",
+  "timeOrigin": "2017-02-21T23:27:56.673Z",
+  "data": {
+    "schema": "pastrylabs/product/image/1-0-0",
+    "id": "9000001",
+    "image": "PolarBear.jpg"
+  }
+}
