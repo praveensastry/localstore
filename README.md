@@ -12,7 +12,7 @@ If you are responsible for deploying this system, you'll want to do the followin
 
 2. Create a Twilio account, open your "Account Settings" and create a secondary auth token for use by the localstore system
 
-3. Encrypt your Twilio account's SID and also the Secondary Auth Token with the encryption key created in step 1 and place them into your private.yml:
+3. Store your Twilio account's SID and also the Secondary Auth Token in SSM Paramstore. While storing encrypt the values with the encryption key created in step 1:
 
   ```yaml
   twilio:
@@ -23,8 +23,8 @@ If you are responsible for deploying this system, you'll want to do the followin
   this can be done easily using the "encryption helpers" capability in the Lambda console.  Alternatively, the following AWS CLI command should do the trick:
 
   ```bash
-  aws kms encrypt --region <region> --key-id <keyId> --plaintext <accountSid> --output text --query CiphertextBlob
-  aws kms encrypt --region <region> --key-id <keyId> --plaintext <authToken> --output text --query CiphertextBlob
+  aws ssm put-parameter --name 'TWILIO_ACCOUNT_SID_ENCRYPTED' --type "SecureString" --value '<accountSid>' --key-id "arn:aws:kms:<region>:<accountId>:key/<key_id_from_step_1>"
+  aws ssm put-parameter --name 'TWILIO_AUTH_TOKEN_ENCRYPTED' --type "SecureString" --value '<apiToken>' --key-id "arn:aws:kms:<region>:<accountId>:key/<key_id_from_step_1>"
   ```
 
 4. Purchase a Twilio number and add it to your `private.yml`:
