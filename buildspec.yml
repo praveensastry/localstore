@@ -10,8 +10,7 @@ phases:
       - echo
       - node --version
       - npm --version
-      #- npm install -g serverless
-      - npm install -g git+https://github.com/erikerikson/serverless.git#allow-self-reference
+      - npm install -g serverless
 
       - sls --version
       - echo

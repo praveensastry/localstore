@@ -1,11 +1,11 @@
 {
   "name": "localstore",
-  "version": "0.1.0",
-  "description": "An introduction to the event stream processing model for the purpose of implementing a retail system backbone",
+  "version": "0.1.1",
+  "description": "100% serverless, event-driven retail solution. An introduction to the event stream processing model for the purpose of implementing a retail system backbone",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --recursive -R min ./**/*.spec.js",
-    "lint": "./node_modules/.bin/eslint ./**/*.js ./**/*.jsx",
+    "test": "npx mocha --recursive -R min ./**/*.spec.js",
+    "lint": "npx eslint ./**/*.js ./**/*.jsx",
     "root:install": "./build/0.env.sh && ./build/1.install.sh \"Installing Top-Level Project Dependencies\"           .",
     "root:install:all": "npm run root:install && npm run writer:install && npm run catalog:install:all && npm run photos:install:all && npm run web:install",
     "root:deploy:all": "npm run stream:deploy && npm run writer:deploy && npm run catalog:deploy:all && npm run photos:deploy:all && npm run web:deploy:all",
@@ -60,7 +60,7 @@
     "web:deploy": "./build/0.env.sh && ./build/2.sls.sh deploy \"Deploying Web App\"                                ./web",
     "web:deploy:all": "npm run web:build && npm run web:deploy",
     "web:remove:all": "./build/0.env.sh && ./build/2.sls.sh remove \"Removing Web App\"                                 ./web",
-    "web:dev:hot": "./node_modules/.bin/webpack-dev-server --config ./web/webpack.config.js --http --hot --progress --colors --watch --display-error-details --display-cached --content-base ./web/app/"
+    "web:dev:hot": "npx webpack-dev-server --config ./web/webpack.config.js --http --hot --progress --colors --watch --display-error-details --display-cached --content-base ./web/app/"
   },
   "repository": {
     "type": "git",
@@ -85,56 +85,38 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "ajv": "^4.11.2",
-    "aws-sdk": "^2.7.16",
-    "babel-core": "^6.6.4",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
-    "babel-preset-airbnb": "^1.1.1",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-0": "^6.22.0",
-    "babel-register": "^6.22.0",
-    "chai": "^3.5.0",
-    "enzyme": "^2.7.0",
-    "eslint": "^3.14.0",
-    "eslint-config-airbnb": "^14.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0",
-    "https-proxy-agent": "^1.0.0",
-    "inquirer": "^3.1.0",
+    "ajv": "^6.5.4",
+    "aws-sdk": "^2.325.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "babel-preset-airbnb": "^2.6.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "enzyme": "^3.6.0",
+    "eslint": "^5.6.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "https-proxy-agent": "^2.2.1",
+    "inquirer": "^6.2.0",
     "kinesis-handler": "git+https://github.com/praveensastry/kinesis-handler.git",
-    "js-yaml": "^3.7.0",
-    "jsdom": "^9.9.1",
-    "json-loader": "^0.5.4",
-    "loadjs": "^3.3.1",
-    "mocha": "^3.0.2",
-    "pre-commit": "^1.1.3",
-    "react": "^15",
-    "react-addons-test-utils": "^15.4.2",
-    "react-dom": "^15",
-    "react-router": "^3.0.2",
-    "serverless": "^1.4.0",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
-  },
-  "contributors": [
-    {
-      "name": "Gregory W. Smith II",
-      "url": "https://github.com/gwsii"
-    },
-    {
-      "name": "Lauren Wang",
-      "url": "https://github.com/laurwang"
-    },
-    {
-      "name": "Rob Gruhl",
-      "url": "https://github.com/RobGruhl"
-    },
-    {
-      "name": "Erik Erikson",
-      "url": "https://github.com/erikerikson"
-    }
-  ]
+    "js-yaml": "^3.12.0",
+    "jsdom": "^12.1.0",
+    "json-loader": "^0.5.7",
+    "loadjs": "^3.5.4",
+    "mocha": "^5.2.0",
+    "pre-commit": "^1.2.2",
+    "react": "^16.5.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.5.2",
+    "react-router": "^4.3.1",
+    "serverless": "^1.32.0",
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.9"
+  }
 }
